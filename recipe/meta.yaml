@@ -1,13 +1,13 @@
 {% set name = "notolog" %}
-{% set version = "1.0.5" %}
+{% set version = "1.0.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/notolog-{{ version }}.tar.gz
-  sha256: 9e1189a207109fea858b1fb2435e7c0971ebfc376ef4907da35105b1a2acfcf6
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/notolog-{{ version }}.tar.gz
+  sha256: 89122fc84ea07eb92c5d0eca366968ede2ed5bd77f3bf304bde054c9995b54f9
 
 build:
   entry_points:
@@ -23,10 +23,10 @@ requirements:
     - poetry-core >=1.5.0
   run:
     - python >=3.9,<4.0
-    - cffi >=1.16.0
+    - cffi >=1.17.1
     - click >=8.1.7
     - cryptography >=42.0.7
-    - emoji >=2.12.1
+    - emoji >=2.14.0
     - iniconfig >=2.0.0
     - Markdown >=3.6
     - packaging >=24.0
@@ -56,10 +56,10 @@ test:
     #- pip check
 
 about:
-  home: https://github.com/notolog/notolog-editor
+  home: https://notolog.app
   summary: Notolog - Python Markdown Editor
   description: |
-    Notolog is an open-source Python Markdown editor that blends simplicity with functionality. Designed with PySide6, it helps tackle daily programming challenges and enhance Python proficiency.
+    Notolog is an open-source Markdown editor licensed under MIT, featuring a simple interface, advanced tools, and an AI assistant, built with Python and PySide6.
   dev_url: https://github.com/notolog/notolog-editor/
   license: MIT
   license_file: LICENSE
