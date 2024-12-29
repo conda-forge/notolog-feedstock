@@ -1,5 +1,5 @@
 {% set name = "notolog" %}
-{% set version = "1.0.8" %}
+{% set version = "1.0.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/notolog-{{ version }}.tar.gz
-  sha256: dc4200ad93dbcf19eef0a7e579358b5023309c2e03da74754f2c5fcd7146cd2e
+  sha256: e2ec4a75e200e0536c5ab248f8fce17ea4420c7153ff5773caad375adf464484
 
 build:
   entry_points:
@@ -18,11 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3.9,<=3.13
+    - python >=3.9,<3.14
     - pip
     - poetry-core >=1.5.0
   run:
-    - python >=3.9,<=3.13
+    - python >=3.9,<3.14
     - cffi >=1.17.1
     - click >=8.1.7
     - cryptography >=42.0.7
