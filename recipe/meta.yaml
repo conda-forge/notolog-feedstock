@@ -14,15 +14,15 @@ build:
     - notolog=notolog.app:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9,<3.14
+    - python {{ python_min }}
     - pip
     - poetry-core >=1.5.0
   run:
-    - python >=3.9,<3.14
+    - python >={{ python_min }},<3.14
     - cffi >=1.17.1
     - click >=8.1.7
     - cryptography >=42.0.7
@@ -49,6 +49,7 @@ test:
     - pytest-asyncio
     - pytest-mock
     - pyside6
+    - python {{ python_min }}
   source_files:
     - tests
   commands:
