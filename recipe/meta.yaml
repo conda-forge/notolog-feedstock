@@ -1,5 +1,5 @@
 {% set name = "notolog" %}
-{% set version = "1.0.9" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/notolog-{{ version }}.tar.gz
-  sha256: e2ec4a75e200e0536c5ab248f8fce17ea4420c7153ff5773caad375adf464484
+  sha256: 4d11b52045c843572e03c47df89da6065409baaf8fc98b1a869f34c4a68b1b3b
 
 build:
   entry_points:
     - notolog=notolog.app:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
