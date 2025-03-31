@@ -1,5 +1,5 @@
 {% set name = "notolog" %}
-{% set version = "1.1.5" %}
+{% set version = "1.1.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/notolog-{{ version }}.tar.gz
-  sha256: 0f29ecb2d1b6334d01069e3af213fd67f2d8d43c8e7ddd66e77a09b4bcbb8e52
+  sha256: 7ace3b73628ccba1406f6d72a858331a9ecadf4a6ebc3c15c8defb1e5cec5f60
 
 build:
   entry_points:
