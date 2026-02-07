@@ -3,7 +3,7 @@ About notolog-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/notolog-feedstock/blob/main/LICENSE.txt)
 
-Home: https://notolog.app
+Home: https://notolog.com
 
 Package license: MIT
 
@@ -11,7 +11,9 @@ Summary: Notolog - Python Markdown Editor
 
 Development: https://github.com/notolog/notolog-editor/
 
-Notolog is an open-source Markdown editor licensed under MIT, featuring a simple interface, advanced tools, and an AI assistant, built with Python and PySide6.
+Documentation: https://notolog.app
+
+Notolog is an open-source Markdown editor built with Python and PySide6, featuring AI-powered assistance and local-first privacy.
 
 
 Current build status
