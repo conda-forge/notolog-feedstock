@@ -7,13 +7,13 @@ Home: https://notolog.com
 
 Package license: MIT
 
-Summary: Notolog - Python Markdown Editor
+Summary: Cross-platform Markdown editor with optional AI assistance, local LLMs, and file encryption
 
-Development: https://github.com/notolog/notolog-editor/
+Development: https://github.com/notolog/notolog-editor
 
 Documentation: https://notolog.app
 
-Notolog is an open-source Markdown editor built with Python and PySide6, featuring AI-powered assistance and local-first privacy.
+Notolog is an open-source, cross-platform Markdown editor built with Python and PySide6, featuring optional AI assistance, local LLMs, file encryption, and local-first privacy.
 
 
 Current build status
