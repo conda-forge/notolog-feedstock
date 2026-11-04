@@ -7,13 +7,13 @@ Home: https://notolog.com
 
 Package license: MIT
 
-Summary: Notolog - Python Markdown Editor
+Summary: Cross-platform Markdown editor with optional AI assistance, local LLMs, and file encryption
 
-Development: https://github.com/notolog/notolog-editor/
+Development: https://github.com/notolog/notolog-editor
 
 Documentation: https://notolog.app
 
-Notolog is an open-source Markdown editor built with Python and PySide6, featuring AI-powered assistance and local-first privacy.
+Notolog is an open-source, cross-platform Markdown editor built with Python and PySide6, featuring optional AI assistance, local LLMs, file encryption, and local-first privacy.
 
 
 Current build status
@@ -129,6 +129,7 @@ mamba repoquery depends notolog --channel conda-forge
 </details>
 
 
+
 About conda-forge
 =================
 
@@ -143,9 +144,7 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
-[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+[Azure](https://azure.microsoft.com/en-us/services/devops/) and [GitHub](https://github.com/)
 it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
