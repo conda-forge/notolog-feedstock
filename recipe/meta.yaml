@@ -1,5 +1,6 @@
 {% set name = "notolog" %}
-{% set version = "1.2.3" %}
+{% set version = "1.2.4" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/notolog-{{ version }}.tar.gz
-  sha256: f33258d65e17af39dbb4754339f38c5b230f98d14a8b35a9f42c4d4cd6e3799c
+  sha256: 65d3468547785cbac92b8b2db25240f85e63fdec785a4d05837baf51b5d8a053
 
 build:
   entry_points:
@@ -18,23 +19,23 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python {{ python_min }}.*
     - pip
-    - poetry-core >=2.4.1,<3.0.0
+    - poetry-core >=2.5.0,<3.0.0
   run:
     - python >={{ python_min }},<3.15
-    - cryptography >=50.0.0,<51.0.0
-    - emoji >=2.15.0,<3.0.0
-    - markdown >=3.10.3,<4.0.0
-    - numpy >=2.2.0,<3.0.0
+    - cryptography >=50.0.2,<51.0.0
+    - emoji >=2.16.0,<3.0.0
+    - markdown >=3.11.2,<4.0.0
+    - numpy >=2.4.6,<2.5|>=2.5.4,<3.0.0
     - packaging >=26.3,<27.0
     - psutil >=7.2.2,<8.0.0
     - pygments >=2.21.0,<3.0.0
-    - pyside6 >=6.11.2,<6.12.0
+    - pyside6 >=6.11.3,<6.12.0
     - qasync >=0.28.0,<0.29.0
-    - tomli >=2.4.1,<3.0.0
+    - tomli >=2.5.0,<3.0.0
     - tomli-w >=1.2.0,<2.0.0
-    - llama-cpp-python >=0.3.35,<0.4.0
+    - llama-cpp-python >=0.3.36,<0.4.0
     - python-sounddevice >=0.5.6,<0.6.0
     - curl
     - ca-certificates
@@ -45,11 +46,13 @@ test:
     - sounddevice
   requires:
     - pytest
-    - python {{ python_min }}
+    - python {{ python_min }}.*
   source_files:
     - tests
     - pyproject.toml
   commands:
+    - notolog --version
+    - python -c "from importlib.metadata import version; assert version('notolog') == '{{ version }}'"
     - pytest tests/test_pkg_integration.py
     - python -c "import sounddevice; assert sounddevice.get_portaudio_version()[0] > 0"
     - curl --version
