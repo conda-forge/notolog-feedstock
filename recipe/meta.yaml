@@ -1,6 +1,5 @@
 {% set name = "notolog" %}
-{% set version = "1.2.4" %}
-{% set python_min = "3.11" %}
+{% set version = "1.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/notolog-{{ version }}.tar.gz
-  sha256: 65d3468547785cbac92b8b2db25240f85e63fdec785a4d05837baf51b5d8a053
+  sha256: 5b010597d9f300a40fccfc60555c2db924d7541c2f02b221f88477ce086134c3
 
 build:
   entry_points:
@@ -26,11 +25,12 @@ requirements:
     - python >={{ python_min }},<3.15
     - cryptography >=50.0.2,<51.0.0
     - emoji >=2.16.0,<3.0.0
-    - markdown >=3.11.2,<4.0.0
+    - markdown >=3.11.3,<4.0.0
     - numpy >=2.4.6,<2.5|>=2.5.4,<3.0.0
     - packaging >=26.3,<27.0
     - psutil >=7.2.2,<8.0.0
     - pygments >=2.21.0,<3.0.0
+    # Keep the noarch dependency safe on Python 3.11 (PYSIDE-3474).
     - pyside6 >=6.11.3,<6.12.0
     - qasync >=0.28.0,<0.29.0
     - tomli >=2.5.0,<3.0.0
@@ -43,6 +43,7 @@ requirements:
 test:
   imports:
     - notolog
+    - notolog.shortcuts
     - sounddevice
   requires:
     - pytest
@@ -53,7 +54,7 @@ test:
   commands:
     - notolog --version
     - python -c "from importlib.metadata import version; assert version('notolog') == '{{ version }}'"
-    - pytest tests/test_pkg_integration.py
+    - pytest tests/test_pkg_integration.py tests/test_qt_runtime.py
     - python -c "import sounddevice; assert sounddevice.get_portaudio_version()[0] > 0"
     - curl --version
     # Package requirements on PyPI differ slightly from those on conda-forge.
@@ -62,14 +63,14 @@ test:
 app:
   entry: notolog
   icon: notolog-logo.png
-  summary: Cross-platform Markdown editor with optional AI assistance, local LLMs, and file encryption
+  summary: An open-source Markdown editor with local AI, text-to-speech, and encrypted notes.
   own_environment: true
 
 about:
   home: https://notolog.com
-  summary: Cross-platform Markdown editor with optional AI assistance, local LLMs, and file encryption
+  summary: An open-source Markdown editor with local AI, text-to-speech, and encrypted notes.
   description: |
-    Notolog is an open-source, cross-platform Markdown editor built with Python and PySide6, featuring optional AI assistance, local LLMs, file encryption, and local-first privacy.
+    Notolog is an open-source, cross-platform Markdown editor built with Python and PySide6, featuring optional AI assistance, local LLMs, text-to-speech, file encryption, and local-first privacy.
   dev_url: https://github.com/notolog/notolog-editor
   doc_url: https://notolog.app
   license: MIT
